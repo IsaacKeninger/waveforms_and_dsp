@@ -61,24 +61,25 @@ t = np.arange(50)
 
 # SQUARE WAVE (This was taken from stack overflow as referenced at top documentation)
 
-# sq = np.linspace(0, 1, 500, endpoint=False)
-# plt.plot(t, signal.square(2 * np.pi * 5 * t),'b')
-# plt.ylim(-2, 2)
-# plt.grid()
-# plt.show()
+t = np.linspace(0, 1, 1000, endpoint=False)
+
+plt.figure(0)
+plt.plot(t, signal.square(2 * np.pi * 5 * t),'b')
+plt.ylim(-2, 2)
+plt.grid()
 
 
 # THE FOLLOWING IS MY OWN EXPERIMENTATION AND KNOWLEDGE (with using sci.py)
 # https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.periodogram.html
-from scipy.signal import periodogram
 
-t = np.linspace(0, 1, 1000, endpoint=False)
 saw = signal.sawtooth(2 * np.pi * 5 * t)
 
-saw_fft = np.fft.fft(saw) # Converts saw signal from time domain to the frequency domain/
+saw_fft = np.fft.fft(saw) # Converts saw signal from time domain to the frequency domain
+
 # shift to 0 hz
 saw_fft_shifted = np.fft.fftshift(saw_fft)
 
+# Get magnitude
 saw_mag = np.abs(saw_fft_shifted) # How Strong each frequency component is
 
 # frequency domain mean that is shows what frequencies are presnt in the signal and relative strenghts
@@ -93,6 +94,7 @@ plt.grid()
 square = signal.square(2 * np.pi * 5 * t)
 
 square_fft = np.fft.fft(square) # Converts saw signal from time domain to the frequency domain/
+
 # shift to 0 hz
 square_fft_shifted = np.fft.fftshift(square_fft)
 
@@ -104,5 +106,7 @@ plt.figure(2)
 
 plt.plot(freq, square_mag)
 plt.xlabel('Frequecy in HZ')
-plt.ylabel('Magnitude')
+plt.ylabel('Magnitude (square)')
 plt.grid()
+
+plt.show()
