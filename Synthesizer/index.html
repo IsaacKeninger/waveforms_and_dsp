@@ -1,0 +1,51 @@
+
+
+<!DOCTYPE html>
+    
+    <head>
+        <title>Isaac's Synthesizer</title>
+    </head>
+
+    <body bgcolor="#494d5f">
+        <main>
+            <div>
+                <h1>Isaac's Synthesizer</h1>
+                <h2>A Personal Project using HTML/CSS/JS</h2>
+            </div>
+
+            <div>
+                <h2>
+                    <label for="waveforms">Waveform Type: </label>
+
+                    <select name="cars" id="cars">
+                        <option value="Sine">Sine</option>
+                        <option value="Sawtooth">Sawtooth</option>
+                        <option value="Square">Square</option>
+                        <option value="Triangle">Triangle</option>
+                    </select>
+                </h2>       
+            </div>
+
+            <div>
+                <h2>
+                    <label for="attack">Attack:</label>
+                    <input type="text" id="attack" name="attack"><br>
+                    <p id="Aoutput"></p>
+                </h2>
+
+                <h2>
+                    <label for="release">Release:</label>
+                    <input type="text" id="release" name="release"><br>
+                    <p id="Routput"></p>
+                </h2>
+
+                <h2 p id="Koutput"></h2>
+
+            </div>
+        
+            <script src="synth.js">
+            </script> 
+    </main>
+</body>
+
+

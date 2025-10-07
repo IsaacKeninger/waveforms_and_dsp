@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<main>
+    <body>
+    
+        <div id="waveform"></div>
+        <button onclick="wavesurfer.playPause()">Play / Pause</button>
+        <button onclick="zoomOneSecond()">Show 1 Second</button>
+
+        <script src="https://unpkg.com/wavesurfer.js"></script>
+        <script>
+        const wavesurfer = WaveSurfer.create({
+            container: '#waveform',
+            waveColor: '#4f81bd',
+            progressColor: '#1f3b73',
+            responsive: true,
+        });
+
+        // Load the wav file you created in Python
+        wavesurfer.load('output.wav');
+
+        function zoomOneSecond() {
+            const duration = wavesurfer.getDuration();
+            const pixelsPerSecond = 200; // adjust zoom resolution
+            wavesurfer.zoom(pixelsPerSecond); // zoom to ~1 sec
+        }
+        </script>   
+    </body>
+</main>
+
+
