@@ -162,11 +162,6 @@ Analyze(0.04, 25, 10, 'square', 'Proper', 'y')
 # Analyze(1.0, 25.0, 1.0, 'square', 'Oversampled')
 # Analyze(1.0, 25.0, 1.0, 'square', 'Nyquist')
 
-signal = createSignal('square', timeDomain, signalParts)
-
-
-
-
 plt.show()
 
 
